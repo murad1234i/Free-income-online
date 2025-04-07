@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডাউনলোড করুন - iPhone 16 Pro জিতুন!</title>
+    <style>
+        :root {
+            --primary: #0071e3;
+            --primary-dark: #004f9a;
+            --black: #1d1d1f;
+            --white: #ffffff;
+            --gray: #86868b;
+            --light-gray: #f5f5f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--black) 0%, #2c2c2e 100%);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fa243c, #0071e3, #34c759);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .offer-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .offer-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.25rem 2rem;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .prize-img-container {
+            margin: 1.5rem auto;
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .prize-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .prize-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .prize-label {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .download-btn {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.4);
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .official-btn {
+            background: linear-gradient(to right, var(--black), #2c2c2e);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.6);
+        }
+        
+        .countdown-container {
+            background: rgba(0, 113, 227, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        
+        .countdown {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .visitor-count {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin: 1rem 0;
+        }
+        
+        .visitor-count span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .ad-slot {
+            margin: 2rem 0;
+            border: 1px dashed rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            background: rgba(249,249,249,0.8);
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .ad-label {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: var(--white);
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--black);
+            color: var(--white);
+            margin-top: 3rem;
+            font-size: 0.875rem;
+        }
+        
+        .disclaimer {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 1.5rem;
+            line-height: 1.5;
+            padding: 0 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .offer-card {
+                padding: 1.5rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+            
+            .download-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📱 iPhone 16 Pro ফ্রি পেতে আজই ডাউনলোড করুন! 📱</h1>
+        <p>সীমিত সময়ের অফার - প্রথম 100 জন ব্যবহারকারীর জন্য</p>
+    </div>
+
+    <div class="container">
+        <!-- Main Offer Card -->
+        <div class="offer-card">
+            <div class="offer-badge">Exclusive</div>
+            
+            <div class="prize-img-container">
+                <img src="https://i.ibb.co/N6Vm5nwk/apple-iphone-16-1.jpg" alt="iPhone 16 Pro" class="prize-img">
+                <div class="prize-label">Prize: iPhone 16 Pro</div>
+            </div>
+            
+            <h2 style="margin-bottom: 0.5rem;">ডাউনলোড করে জিতুন iPhone 16 Pro!</h2>
+            <p style="color: var(--gray);">আমাদের অ্যাপটি ডাউনলোড করুন এবং জিতার সুযোগ পান</p>
+            
+            <div class="visitor-count">🚀 <span id="visitors">2,153</span> জন ইতিমধ্যে ডাউনলোড করেছেন!</div>
+            
+            <div class="countdown-container">
+                <div class="countdown">⏰ সময় বাকি: <span id="timer">04:58</span></div>
+            </div>
+            
+            <!-- Button Group -->
+            <div class="btn-group">
+                <a href="https://geometrydoomeddrone.com/ypgws18n9h?key=7441f77e1c4aadbd7712ca9761e426c9" class="download-btn">
+                    <span>⬇️</span> ডাউনলোড করুন
+                </a>
+                <a href="https://www.apple.com/iphone-16/" class="download-btn official-btn" target="_blank">
+                    <span>🍏</span> অফিসিয়াল সাইট
+                </a>
+            </div>
+            
+            <p class="disclaimer">*এটি একটি প্রমোশনাল অফার। Apple Inc. এর সাথে এই প্রচারের কোনো সম্পর্ক নেই। iPhone হল Apple Inc.-এর একটি ট্রেডমার্ক। পুরস্কার পেতে শর্তাবলী প্রযোজ্য।</p>
+        </div>
+
+        <!-- Ad Slot 1 -->
+        <div class="ad-slot">
+            <div class="ad-label">Advertisement</div>
+            <script async="async" data-cfasync="false" src="//geometrydoomeddrone.com/07747d29682b4e0fe9bd41a4a2d7ccbf/invoke.js"></script>
+            <div id="container-07747d29682b4e0fe9bd41a4a2d7ccbf"></div>
+        </div>
+
+        <!-- Features Section -->
+        <h3 style="text-align: center; margin-bottom: 1rem;">এই অ্যাপটি ডাউনলোড করার সুবিধা:</h3>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div class="feature-title">টাকা উপার্জন</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎁</div>
+                <div class="feature-title">ফ্রি গিফ্ট</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">iPhone জিতুন</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">দ্রুত পেমেন্ট</div>
+            </div>
+        </div>
+
+        <!-- Ad Slot 2 -->
+        <div class="ad-slot">
+            <div class="ad-label">Sponsored</div>
+            <script type='text/javascript' src='//geometrydoomeddrone.com/c0/0e/7a/c00e7a5ba8c33d87375db06fbcf47ec3.js'></script>
+        </div>
+
+        <!-- Ad Slot 3 -->
+        <div class="ad-slot">
+            <div class="ad-label">Special Offer</div>
+            <script type='text/javascript' src='//geometrydoomeddrone.com/77/90/7b/77907bc944c1665859906d2ad8da5519.js'></script>
+        </div>
+
+        <!-- Ad Slot 4 (Banner) -->
+        <div class="ad-slot">
+            <div class="ad-label">Advertisement</div>
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '1ea57498640e669b2e20032eeb8be623',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//geometrydoomeddrone.com/1ea57498640e669b2e20032eeb8be623/invoke.js"></script>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 All Rights Reserved | Privacy Policy | Terms of Service</p>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        // Fake Visitor Counter
+        function updateVisitorCount() {
+            var countElement = document.getElementById('visitors');
+            var currentCount = 2153;
+            setInterval(function() {
+                currentCount += Math.floor(Math.random() * 3) + 1;
+                countElement.textContent = currentCount.toLocaleString();
+            }, 3000);
+        }
+
+        window.onload = function () {
+            // 5 minute countdown
+            var fiveMinutes = 60 * 5,
+                display = document.querySelector('#timer');
+            startTimer(fiveMinutes, display);
+            
+            // Start visitor counter
+            updateVisitorCount();
+        };
+    </script>
+</body>
+</html>
